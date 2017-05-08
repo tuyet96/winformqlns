@@ -290,9 +290,87 @@ namespace Khanh
         string sua;
         private void btnsua_Click(object sender, EventArgs e)
         {
+            string ma = txtMa.Text;
+            string ten = txtTen.Text;
+            string phongbanma = txtPhongban.Text;
+            string trinhdoma = txtTrinhdo.Text;
+            string bacluongma = txtLuong.Text;
+            string quequan = txtQuequan.Text;
+            string dantoc = txtDantoc.Text;
+            string dienthoai = txtDienthoai.Text;
+            string email = txtEmail.Text;
+            string chucvuma = txtChucvu.Text;
+            string ngaysinh = dateTimePNgaysinh.Text;
+
+
+            List<SqlParameter> listParams = new List<SqlParameter>();
+            int ret = 0;
+
+            SqlParameter param;
+            param = new SqlParameter("@ma", SqlDbType.VarChar);
+            param.Value = ma;
+            listParams.Add(param);
+
+            param = new SqlParameter("@ten", SqlDbType.NVarChar);
+            param.Value = ten;
+            listParams.Add(param);
+
+            param = new SqlParameter("@ngaysinh", SqlDbType.Date);
+            param.Value = ngaysinh;
+            listParams.Add(param);
+
+            param = new SqlParameter("@email", SqlDbType.VarChar);
+            param.Value = email;
+            listParams.Add(param);
+
+            param = new SqlParameter("@dienthoai", SqlDbType.VarChar);
+            param.Value = ma;
+            listParams.Add(param);
+
+            param = new SqlParameter("@dantoc", SqlDbType.VarChar);
+            param.Value = dantoc;
+            listParams.Add(param);
+
+            param = new SqlParameter("@phongbanma", SqlDbType.NVarChar);
+            param.Value = phongbanma;
+            listParams.Add(param);
+
+            param = new SqlParameter("@trinhdoma", SqlDbType.NVarChar);
+            param.Value = trinhdoma;
+            listParams.Add(param);
+
+            param = new SqlParameter("@quequan", SqlDbType.NVarChar);
+            param.Value = quequan;
+            listParams.Add(param);
+
+            param = new SqlParameter("@bacluongma", SqlDbType.BigInt);
+            param.Value = bacluongma;
+            listParams.Add(param);
+
+            param = new SqlParameter("@chucvuma", SqlDbType.NVarChar);
+            param.Value = chucvuma;
+            listParams.Add(param);
 
 
 
+
+            DialogResult result = MessageBox.Show("Bạn chắc chắn muốn sửa", "Thông Báo",
+              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                ret = conn.doStoredProceduce("updl", listParams.ToArray());
+                kn.Close();
+                if (ret < 0)
+                {
+                    MessageBox.Show("Lỗi khi sửa", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thành công", "Thông báo");
+                    Form1_Load(sender, e);
+                }
+            }
         }
 
         private void btnthoat_Click(object sender, EventArgs e)

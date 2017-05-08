@@ -201,6 +201,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\tải xuống.jpg" />
     <None Include="Resources\close12.png" />
     <None Include="Resources\11.png" />
     <None Include="Resources\edit_user1.png" />

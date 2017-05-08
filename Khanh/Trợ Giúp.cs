@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Khanh
 {
-    public partial class Trợ_Giúp : Form
+    public partial class Tro_Giup : Form
     {
-        public Trợ_Giúp()
+        public Tro_Giup()
         {
             InitializeComponent();
         }

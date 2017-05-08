@@ -81,19 +81,20 @@
             this.radTheoma.TabStop = true;
             this.radTheoma.Text = "Theo Mã";
             this.radTheoma.UseVisualStyleBackColor = false;
+            this.radTheoma.CheckedChanged += new System.EventHandler(this.radTheoma_CheckedChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 232);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 192);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(730, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(730, 190);
             this.dataGridView1.TabIndex = 65;
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThoat.BackColor = System.Drawing.Color.White;
             this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.FlatAppearance.BorderSize = 0;
@@ -113,7 +114,7 @@
             // 
             // btnTim
             // 
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnTim.BackColor = System.Drawing.Color.White;
             this.btnTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTim.FlatAppearance.BorderSize = 0;
             this.btnTim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -128,6 +129,7 @@
             this.btnTim.Text = "Tìm";
             this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // pictureBox1
             // 

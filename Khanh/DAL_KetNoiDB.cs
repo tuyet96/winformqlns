@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Deployment.Application;
+using System.Windows.Forms;
 
 namespace Khanh
 {
@@ -13,6 +15,9 @@ namespace Khanh
 
         SqlConnection conn;
         SqlCommand cmd;
+        SqlDataReader sqldr;
+        DataSet ds = new DataSet();
+        SqlDataAdapter sqlda;
         private SqlTransaction tran = null;
         public DAL_KetNoiDB()
         {
@@ -143,6 +148,24 @@ namespace Khanh
             }
             return ret;
         }
+        public void loadtextbox(TextBox cb, string strselect)
+        {
+            Open();
+            cmd = new SqlCommand(strselect, conn);
+            sqldr = cmd.ExecuteReader();
+            while (sqldr.Read())
+            {
+                cb.Text = sqldr[0].ToString();
+            }
+            Close();
 
+        }
+        public void loaddatagridview(DataGridView dg, string strselect)
+        {
+            ds.Clear();
+            sqlda = new SqlDataAdapter(strselect, conn);
+            sqlda.Fill(ds, "tenbang");
+            dg.DataSource = ds.Tables[0];
+        }
     }
 }

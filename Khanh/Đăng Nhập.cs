@@ -22,14 +22,59 @@ namespace Khanh
         {
 
         }
+        public bool checkObject()
+        {
+            if (string.IsNullOrWhiteSpace(txtTendangnhap.Text))
+            {
+                MessageBox.Show("bạn chưa nhâp ten người dùng", "Cảnh báo ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTendangnhap.Focus();
+                return false;
+            }
+            if(string.IsNullOrWhiteSpace(txtMatkhau.Text))
+            {
+                MessageBox.Show("bạn chưa nhập mật khẩu ", "cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMatkhau.Focus();
+                return false;
 
+            }
+            return true;
+
+           
+        }
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (txtTendangnhap.Text == "admin" && txtMatkhau.Text == "admin")
+            if (checkObject())
             {
-                isThanhcong = true;
-                this.Close();
+                if(txtTendangnhap.Text.Equals("admin")&&txtMatkhau.Text.Equals("admin"))
+                {
+                    FormChung chung = new FormChung();
+                    chung.Show();
+                    
+
+                }
+                else
+                {
+                    MessageBox.Show("lỗi đăng nhập");
+                }
+                   
+               
             }
+
+           // if (txtTendangnhap.Text == "admin" && txtMatkhau.Text == "admin")
+           // {
+           //     isThanhcong = true;
+           //     this.Close();
+           // }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
