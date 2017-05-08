@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="N3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="chucvu">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tenchucvu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="hopdonglaodong">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nhanvienma" Type="varchar" MaxLength="10" />
+          <Property Name="ngaybatdau" Type="date" />
+          <Property Name="ngayketthuc" Type="date" />
+        </EntityType>
+        <EntityType Name="luong">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="bigint" Nullable="false" />
+          <Property Name="luongcoban" Type="bigint" />
+          <Property Name="luongthuong" Type="bigint" />
+        </EntityType>
+        <EntityType Name="nhanvien">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysinh" Type="date" />
+          <Property Name="quequan" Type="nvarchar" MaxLength="100" />
+          <Property Name="gioitinh" Type="bit" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="dienthoai" Type="varchar" MaxLength="11" />
+          <Property Name="dantoc" Type="varchar" MaxLength="20" />
+          <Property Name="phongbanma" Type="nvarchar" MaxLength="50" />
+          <Property Name="chucvuma" Type="nvarchar" MaxLength="50" />
+          <Property Name="trinhdoma" Type="nvarchar" MaxLength="20" />
+          <Property Name="bacluongma" Type="bigint" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="phongban">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tenphongban" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="100" />
+          <Property Name="sodienthoai" Type="varchar" MaxLength="11" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="trinhdohocvan">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="tentrinhdo" Type="nvarchar" MaxLength="50" />
+          <Property Name="chuyennganh" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__hopdongla__nhanv__1DE57479">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="hopdonglaodong" Type="Self.hopdonglaodong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="hopdonglaodong">
+              <PropertyRef Name="nhanvienma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__bacluo__1B0907CE">
+          <End Role="luong" Type="Self.luong" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="luong">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="bacluongma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__chucvu__1920BF5C">
+          <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chucvu">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="chucvuma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__phongb__182C9B23">
+          <End Role="phongban" Type="Self.phongban" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phongban">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="phongbanma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__trinhd__1A14E395">
+          <End Role="trinhdohocvan" Type="Self.trinhdohocvan" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trinhdohocvan">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="trinhdoma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="N3ModelStoreContainer">
+          <EntitySet Name="chucvu" EntityType="Self.chucvu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hopdonglaodong" EntityType="Self.hopdonglaodong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="luong" EntityType="Self.luong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhanvien" EntityType="Self.nhanvien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="phongban" EntityType="Self.phongban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trinhdohocvan" EntityType="Self.trinhdohocvan" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__hopdongla__nhanv__1DE57479" Association="Self.FK__hopdongla__nhanv__1DE57479">
+            <End Role="nhanvien" EntitySet="nhanvien" />
+            <End Role="hopdonglaodong" EntitySet="hopdonglaodong" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__bacluo__1B0907CE" Association="Self.FK__nhanvien__bacluo__1B0907CE">
+            <End Role="luong" EntitySet="luong" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__chucvu__1920BF5C" Association="Self.FK__nhanvien__chucvu__1920BF5C">
+            <End Role="chucvu" EntitySet="chucvu" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__phongb__182C9B23" Association="Self.FK__nhanvien__phongb__182C9B23">
+            <End Role="phongban" EntitySet="phongban" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__trinhd__1A14E395" Association="Self.FK__nhanvien__trinhd__1A14E395">
+            <End Role="trinhdohocvan" EntitySet="trinhdohocvan" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="N3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="chucvu">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenchucvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__nhanvien__chucvu__1920BF5C" FromRole="chucvu" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="hopdonglaodong">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nhanvienma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ngaybatdau" Type="DateTime" Precision="0" />
+          <Property Name="ngayketthuc" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__hopdongla__nhanv__1DE57479" FromRole="hopdonglaodong" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="luong">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="Int64" Nullable="false" />
+          <Property Name="luongcoban" Type="Int64" />
+          <Property Name="luongthuong" Type="Int64" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__nhanvien__bacluo__1B0907CE" FromRole="luong" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="nhanvien">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="0" />
+          <Property Name="quequan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="gioitinh" Type="Boolean" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dienthoai" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="dantoc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="phongbanma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="chucvuma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trinhdoma" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bacluongma" Type="Int64" />
+          <Property Name="ghichu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="chucvu" Relationship="Self.FK__nhanvien__chucvu__1920BF5C" FromRole="nhanvien" ToRole="chucvu" />
+          <NavigationProperty Name="hopdonglaodong" Relationship="Self.FK__hopdongla__nhanv__1DE57479" FromRole="nhanvien" ToRole="hopdonglaodong" />
+          <NavigationProperty Name="luong" Relationship="Self.FK__nhanvien__bacluo__1B0907CE" FromRole="nhanvien" ToRole="luong" />
+          <NavigationProperty Name="phongban" Relationship="Self.FK__nhanvien__phongb__182C9B23" FromRole="nhanvien" ToRole="phongban" />
+          <NavigationProperty Name="trinhdohocvan" Relationship="Self.FK__nhanvien__trinhd__1A14E395" FromRole="nhanvien" ToRole="trinhdohocvan" />
+        </EntityType>
+        <EntityType Name="phongban">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenphongban" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sodienthoai" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="ghichu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__nhanvien__phongb__182C9B23" FromRole="phongban" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="trinhdohocvan">
+          <Key>
+            <PropertyRef Name="ma" />
+          </Key>
+          <Property Name="ma" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tentrinhdo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="chuyennganh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__nhanvien__trinhd__1A14E395" FromRole="trinhdohocvan" ToRole="nhanvien" />
+        </EntityType>
+        <Association Name="FK__nhanvien__chucvu__1920BF5C">
+          <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chucvu">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="chucvuma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hopdongla__nhanv__1DE57479">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="hopdonglaodong" Type="Self.hopdonglaodong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="hopdonglaodong">
+              <PropertyRef Name="nhanvienma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__bacluo__1B0907CE">
+          <End Role="luong" Type="Self.luong" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="luong">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="bacluongma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__phongb__182C9B23">
+          <End Role="phongban" Type="Self.phongban" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phongban">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="phongbanma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__trinhd__1A14E395">
+          <End Role="trinhdohocvan" Type="Self.trinhdohocvan" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trinhdohocvan">
+              <PropertyRef Name="ma" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="trinhdoma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="btvnEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="chucvu" EntityType="Self.chucvu" />
+          <EntitySet Name="hopdonglaodong" EntityType="Self.hopdonglaodong" />
+          <EntitySet Name="luong" EntityType="Self.luong" />
+          <EntitySet Name="nhanvien" EntityType="Self.nhanvien" />
+          <EntitySet Name="phongban" EntityType="Self.phongban" />
+          <EntitySet Name="trinhdohocvan" EntityType="Self.trinhdohocvan" />
+          <AssociationSet Name="FK__nhanvien__chucvu__1920BF5C" Association="Self.FK__nhanvien__chucvu__1920BF5C">
+            <End Role="chucvu" EntitySet="chucvu" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hopdongla__nhanv__1DE57479" Association="Self.FK__hopdongla__nhanv__1DE57479">
+            <End Role="nhanvien" EntitySet="nhanvien" />
+            <End Role="hopdonglaodong" EntitySet="hopdonglaodong" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__bacluo__1B0907CE" Association="Self.FK__nhanvien__bacluo__1B0907CE">
+            <End Role="luong" EntitySet="luong" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__phongb__182C9B23" Association="Self.FK__nhanvien__phongb__182C9B23">
+            <End Role="phongban" EntitySet="phongban" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__trinhd__1A14E395" Association="Self.FK__nhanvien__trinhd__1A14E395">
+            <End Role="trinhdohocvan" EntitySet="trinhdohocvan" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="N3ModelStoreContainer" CdmEntityContainer="btvnEntities">
+          <EntitySetMapping Name="chucvu">
+            <EntityTypeMapping TypeName="N3Model.chucvu">
+              <MappingFragment StoreEntitySet="chucvu">
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="tenchucvu" ColumnName="tenchucvu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hopdonglaodong">
+            <EntityTypeMapping TypeName="N3Model.hopdonglaodong">
+              <MappingFragment StoreEntitySet="hopdonglaodong">
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="nhanvienma" ColumnName="nhanvienma" />
+                <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />
+                <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="luong">
+            <EntityTypeMapping TypeName="N3Model.luong">
+              <MappingFragment StoreEntitySet="luong">
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="luongcoban" ColumnName="luongcoban" />
+                <ScalarProperty Name="luongthuong" ColumnName="luongthuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhanvien">
+            <EntityTypeMapping TypeName="N3Model.nhanvien">
+              <MappingFragment StoreEntitySet="nhanvien">
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="quequan" ColumnName="quequan" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+                <ScalarProperty Name="dantoc" ColumnName="dantoc" />
+                <ScalarProperty Name="phongbanma" ColumnName="phongbanma" />
+                <ScalarProperty Name="chucvuma" ColumnName="chucvuma" />
+                <ScalarProperty Name="trinhdoma" ColumnName="trinhdoma" />
+                <ScalarProperty Name="bacluongma" ColumnName="bacluongma" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phongban">
+            <EntityTypeMapping TypeName="N3Model.phongban">
+              <MappingFragment StoreEntitySet="phongban">
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="tenphongban" ColumnName="tenphongban" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sodienthoai" ColumnName="sodienthoai" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trinhdohocvan">
+            <EntityTypeMapping TypeName="N3Model.trinhdohocvan">
+              <MappingFragment StoreEntitySet="trinhdohocvan">
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="tentrinhdo" ColumnName="tentrinhdo" />
+                <ScalarProperty Name="chuyennganh" ColumnName="chuyennganh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

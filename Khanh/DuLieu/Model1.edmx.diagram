@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="565c38f211804865af01f1c23f905ef6" Name="Diagram1">
+        <EntityTypeShape EntityType="N3Model.chucvu" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="N3Model.hopdonglaodong" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="N3Model.luong" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="N3Model.nhanvien" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="N3Model.phongban" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="N3Model.trinhdohocvan" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="N3Model.FK__nhanvien__chucvu__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="N3Model.FK__hopdongla__nhanv__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="N3Model.FK__nhanvien__bacluo__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="N3Model.FK__nhanvien__phongb__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="N3Model.FK__nhanvien__trinhd__1A14E395" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
