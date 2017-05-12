@@ -48,6 +48,7 @@ namespace Khanh
                 if(txtTendangnhap.Text.Equals("admin")&&txtMatkhau.Text.Equals("admin"))
                 {
                     FormChung chung = new FormChung();
+                    this.Hide();
                     chung.Show();
                     
 

@@ -20,12 +20,14 @@ namespace Khanh
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 nhanvien = new Form1();
+            this.Hide();
             nhanvien.Show();
         }
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 timkiem = new Form2();
+            this.Hide();
             timkiem.Show();
 
         }
@@ -33,6 +35,7 @@ namespace Khanh
         private void chínhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Tro_Giup trogiup = new Tro_Giup();
+            this.Hide();
             trogiup.Show();
         }
     }
