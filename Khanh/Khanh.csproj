@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chucvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chucvu.Designer.cs">
+      <DependentUpon>Chucvu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL_KetNoiDB.cs" />
     <Compile Include="DuLieu\chucvu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -97,17 +103,36 @@
     <Compile Include="FormChung.Designer.cs">
       <DependentUpon>FormChung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nhân Viên.cs">
+    <Compile Include="Hopdong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nhân Viên.Designer.cs">
-      <DependentUpon>Nhân Viên.cs</DependentUpon>
+    <Compile Include="Hopdong.Designer.cs">
+      <DependentUpon>Hopdong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phòng Ban.cs">
+    <Compile Include="Luong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Phòng Ban.Designer.cs">
-      <DependentUpon>Phòng Ban.cs</DependentUpon>
+    <Compile Include="Luong.Designer.cs">
+      <DependentUpon>Luong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien.Designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="Thongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thongtin.Designer.cs">
+      <DependentUpon>Thongtin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongBan.Designer.cs">
+      <DependentUpon>PhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Tìm Kiếm.cs">
       <SubType>Form</SubType>
@@ -115,11 +140,11 @@
     <Compile Include="Tìm Kiếm.Designer.cs">
       <DependentUpon>Tìm Kiếm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Đăng Nhập.cs">
+    <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Đăng Nhập.Designer.cs">
-      <DependentUpon>Đăng Nhập.cs</DependentUpon>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,14 +154,26 @@
     <Compile Include="Trợ Giúp.Designer.cs">
       <DependentUpon>Trợ Giúp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chucvu.resx">
+      <DependentUpon>Chucvu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChung.resx">
       <DependentUpon>FormChung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nhân Viên.resx">
-      <DependentUpon>Nhân Viên.cs</DependentUpon>
+    <EmbeddedResource Include="Hopdong.resx">
+      <DependentUpon>Hopdong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Phòng Ban.resx">
-      <DependentUpon>Phòng Ban.cs</DependentUpon>
+    <EmbeddedResource Include="Luong.resx">
+      <DependentUpon>Luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thongtin.resx">
+      <DependentUpon>Thongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongBan.resx">
+      <DependentUpon>PhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trợ Giúp.resx">
       <DependentUpon>Trợ Giúp.cs</DependentUpon>
@@ -144,8 +181,8 @@
     <EmbeddedResource Include="Tìm Kiếm.resx">
       <DependentUpon>Tìm Kiếm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Đăng Nhập.resx">
-      <DependentUpon>Đăng Nhập.cs</DependentUpon>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

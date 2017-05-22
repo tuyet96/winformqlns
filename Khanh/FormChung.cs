@@ -38,5 +38,28 @@ namespace Khanh
             this.Hide();
             trogiup.Show();
         }
+
+        private void dSLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Luong luong = new Luong();
+            this.Hide();
+            luong.Show();
+        }
+
+        private void chứcVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Chucvu cv = new Chucvu();
+            this.Hide();
+            cv.Show();
+
+        }
+
+        private void hơpĐồngLĐToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hopdong hd = new Hopdong();
+           // this.Hide();
+            hd.Show();
+        }
     }
 }

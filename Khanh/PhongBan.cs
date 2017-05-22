@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Khanh
 {
-    public partial class Phòng_Ban : Form
+    public partial class Phong_Ban : Form
     {
-        public Phòng_Ban()
+        public Phong_Ban()
         {
             InitializeComponent();
         }

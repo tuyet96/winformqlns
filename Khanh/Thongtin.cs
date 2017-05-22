@@ -23,6 +23,7 @@ namespace Khanh
 
         }
         SqlConnection kn = new SqlConnection(@"Data Source=DESKTOP-I269IGU\SQLEXPRESS;Initial Catalog=N3;Integrated Security=True");
+      //  Data Source = DESKTOP - I269IGU\SQLEXPRESS;Initial Catalog = N3; Integrated Security = True
         private void ketnoi()
         {
 
@@ -56,13 +57,13 @@ namespace Khanh
             DataRowView drview = (DataRowView)drv.DataBoundItem;
             if (drview == null)
             {
-                MessageBox.Show("Không l?y đư?c d? li?u");
+                MessageBox.Show("Không lấy đư?c dữ liêu");
                 return;
             }
             DataRow dr = drview.Row;
             if (dr == null)
             {
-                MessageBox.Show("Không l?y đư?c d? li?u");
+                MessageBox.Show("Không lấy được dữ liêu");
                 return;
             }
 
@@ -376,6 +377,11 @@ namespace Khanh
         private void btnthoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtChucvu_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

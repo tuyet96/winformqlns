@@ -78,6 +78,7 @@
             this.txtChucvu.Name = "txtChucvu";
             this.txtChucvu.Size = new System.Drawing.Size(171, 20);
             this.txtChucvu.TabIndex = 14;
+            this.txtChucvu.TextChanged += new System.EventHandler(this.txtChucvu_TextChanged);
             // 
             // txtPhongban
             // 
