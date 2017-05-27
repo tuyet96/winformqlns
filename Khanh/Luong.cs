@@ -109,7 +109,7 @@ namespace Khanh
             string ma = txtMaluong.Text;
             string luongcoban = txtLuong.Text;
             string luongthuong = txtLuongthuong.Text;
-           
+
 
             List<SqlParameter> listParams = new List<SqlParameter>();
             int ret = 0;
@@ -175,11 +175,11 @@ namespace Khanh
 
 
             DialogResult result = MessageBox.Show("Bạn chắc chắn muốn sửa", "Thông Báo",
-              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                ret = conn.doStoredProceduce(" up_luong ", listParams.ToArray());
+                ret = conn.doStoredProceduce("Edid_Luong", listParams.ToArray());
                 kn.Close();
                 if (ret < 0)
                 {
@@ -187,7 +187,7 @@ namespace Khanh
                 }
                 else
                 {
-                    MessageBox.Show("sửa thành công", "Thông báo");
+                    MessageBox.Show("Sửa thành công", "Thông báo");
                     Luong_Load(sender, e);
                 }
             }

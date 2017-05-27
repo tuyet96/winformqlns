@@ -190,7 +190,7 @@ namespace Khanh
             listParams.Add(param);
 
             param = new SqlParameter("@dienthoai", SqlDbType.VarChar);
-            param.Value = ma;
+            param.Value = dienthoai;
             listParams.Add(param);
 
             param = new SqlParameter("@dantoc", SqlDbType.VarChar);
@@ -325,7 +325,7 @@ namespace Khanh
             listParams.Add(param);
 
             param = new SqlParameter("@dienthoai", SqlDbType.VarChar);
-            param.Value = ma;
+            param.Value = dienthoai;
             listParams.Add(param);
 
             param = new SqlParameter("@dantoc", SqlDbType.VarChar);
@@ -360,7 +360,7 @@ namespace Khanh
 
             if (result == DialogResult.Yes)
             {
-                ret = conn.doStoredProceduce("updl", listParams.ToArray());
+                ret = conn.doStoredProceduce("Edid_NV", listParams.ToArray());
                 kn.Close();
                 if (ret < 0)
                 {
