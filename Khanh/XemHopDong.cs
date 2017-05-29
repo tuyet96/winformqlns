@@ -15,9 +15,11 @@ namespace Khanh
     {
         SqlConnection kn = new SqlConnection(@"Data Source=DESKTOP-I269IGU\SQLEXPRESS;Initial Catalog=N3;Integrated Security=True");
         private readonly string ma;
+       
 
         public Hopdong()
         {
+            
             InitializeComponent();
         }
         private void ketnoi()
@@ -49,6 +51,7 @@ namespace Khanh
 
             }
         }
+       
 
         private void Hopdong_Load(object sender, EventArgs e)
         {
@@ -84,5 +87,8 @@ namespace Khanh
         {
 
         }
+
+       
+        
     }
 }

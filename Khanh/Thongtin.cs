@@ -126,15 +126,7 @@ namespace Khanh
         }
         private void dataGridVXem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                dataGridVXem.CurrentRow.Selected = true;
-
-            }
-            catch
-            {
-
-            }
+           
 
         }
 

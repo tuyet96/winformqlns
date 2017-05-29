@@ -7,75 +7,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Khanh
 {
-    public partial class Form3 : Form
+    public partial class DangNhap : Form
     {
-        public static bool isThanhcong = false;
-        public Form3()
+        public DangNhap()
         {
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void test_Load(object sender, EventArgs e)
         {
 
         }
-        public bool checkObject()
-        {
-            if (string.IsNullOrWhiteSpace(txtTendangnhap.Text))
-            {
-                MessageBox.Show("bạn chưa nhâp ten người dùng", "Cảnh báo ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTendangnhap.Focus();
-                return false;
-            }
-            if(string.IsNullOrWhiteSpace(txtMatkhau.Text))
-            {
-                MessageBox.Show("bạn chưa nhập mật khẩu ", "cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtMatkhau.Focus();
-                return false;
 
-            }
-            return true;
-
-           
-        }
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (checkObject())
+            SqlConnection kn = new SqlConnection(@"Data Source=DESKTOP-I269IGU\SQLEXPRESS;Initial Catalog=N3;Integrated Security=True");
+            try
             {
-                if(txtTendangnhap.Text.Equals("admin")&&txtMatkhau.Text.Equals("admin"))
+                kn.Open();
+                string tk = txtTendangnhap.Text;
+                string mk = txtMatkhau.Text;
+                string sql= "SELECT *FROM nguoidung where tennguoidung= '" +tk+ "' and matkhau= '"+mk+"' ";
+                SqlCommand cmd = new SqlCommand(sql, kn);
+                SqlDataReader data = cmd.ExecuteReader();
+                if (data.Read() == true)
                 {
                     FormChung chung = new FormChung();
                     this.Hide();
                     chung.Show();
-                    
-
                 }
                 else
                 {
-                    MessageBox.Show("lỗi đăng nhập");
+                    MessageBox.Show("Đăng Nhập thất bại");
                 }
-                   
-               
-            }
 
-           // if (txtTendangnhap.Text == "admin" && txtMatkhau.Text == "admin")
-           // {
-           //     isThanhcong = true;
-           //     this.Close();
-           // }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi kết nối");
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -61,5 +61,45 @@ namespace Khanh
            // this.Hide();
             hd.Show();
         }
+
+        private void lươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XemLuong l = new XemLuong();
+            // this.Hide();
+            l.Show();
+
+        }
+
+        private void hợpĐồngLĐToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hopdong hd = new Hopdong();
+            // this.Hide();
+            hd.Show();
+        }
+
+        private void chứcVụToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+
+            XemChucVu cv = new XemChucVu();
+            // this.Hide();
+            cv.Show();
+        }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            PhongBancs pb = new PhongBancs();
+            // this.Hide();
+            pb.Show();
+        }
+
+        private void thayĐổiMâtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Doimatkhau mk = new Doimatkhau();
+            // this.Hide();
+            mk.Show();
+
+        }
     }
 }

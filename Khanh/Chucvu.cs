@@ -201,7 +201,7 @@ namespace Khanh
 
             if (result == DialogResult.Yes)
             {
-                ret = conn.doStoredProceduce("  up_cv", listParams.ToArray());
+                ret = conn.doStoredProceduce("Edid_ChucVu", listParams.ToArray());
                 kn.Close();
                 if (ret < 0)
                 {

@@ -64,6 +64,12 @@
       <DependentUpon>Chucvu.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL_KetNoiDB.cs" />
+    <Compile Include="Doimatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doimatkhau.Designer.cs">
+      <DependentUpon>Doimatkhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="DuLieu\chucvu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -103,11 +109,29 @@
     <Compile Include="FormChung.Designer.cs">
       <DependentUpon>FormChung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hopdong.cs">
+    <Compile Include="PhongBancs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hopdong.Designer.cs">
-      <DependentUpon>Hopdong.cs</DependentUpon>
+    <Compile Include="PhongBancs.Designer.cs">
+      <DependentUpon>PhongBancs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XemChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemChucVu.Designer.cs">
+      <DependentUpon>XemChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XemHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemHopDong.Designer.cs">
+      <DependentUpon>XemHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong.cs">
       <SubType>Form</SubType>
@@ -128,23 +152,11 @@
     <Compile Include="Thongtin.Designer.cs">
       <DependentUpon>Thongtin.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhongBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PhongBan.Designer.cs">
-      <DependentUpon>PhongBan.cs</DependentUpon>
-    </Compile>
     <Compile Include="Timkiem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Timkiem.Designer.cs">
       <DependentUpon>Timkiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DangNhap.Designer.cs">
-      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,14 +166,32 @@
     <Compile Include="Trogiup.Designer.cs">
       <DependentUpon>Trogiup.cs</DependentUpon>
     </Compile>
+    <Compile Include="XemLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemLuong.Designer.cs">
+      <DependentUpon>XemLuong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Chucvu.resx">
       <DependentUpon>Chucvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doimatkhau.resx">
+      <DependentUpon>Doimatkhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChung.resx">
       <DependentUpon>FormChung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hopdong.resx">
-      <DependentUpon>Hopdong.cs</DependentUpon>
+    <EmbeddedResource Include="PhongBancs.resx">
+      <DependentUpon>PhongBancs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemChucVu.resx">
+      <DependentUpon>XemChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemHopDong.resx">
+      <DependentUpon>XemHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong.resx">
       <DependentUpon>Luong.cs</DependentUpon>
@@ -172,17 +202,11 @@
     <EmbeddedResource Include="Thongtin.resx">
       <DependentUpon>Thongtin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhongBan.resx">
-      <DependentUpon>PhongBan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Trogiup.resx">
       <DependentUpon>Trogiup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Timkiem.resx">
       <DependentUpon>Timkiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
-      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,6 +218,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="XemLuong.resx">
+      <DependentUpon>XemLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DuLieu\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -238,6 +265,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\phongban.png" />
     <None Include="Resources\tải xuống.jpg" />
     <None Include="Resources\close12.png" />
     <None Include="Resources\11.png" />

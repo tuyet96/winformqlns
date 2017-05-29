@@ -56,7 +56,7 @@ namespace Khanh
         {
             try
             {
-                if((txtTimkiem.Text=="")||(txtTimkiem.Text=="Nhập ào từ khóa tìm kiếm"))
+                if((txtTimkiem.Text=="")||(txtTimkiem.Text=="Nhập vào từ khóa tìm kiếm"))
                 {
                     MessageBox.Show("bạn chưa nhap từ khóa ","Nhập từ Khóa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 

@@ -44,9 +44,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(205, 27);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 13);
+            this.label8.Size = new System.Drawing.Size(72, 16);
             this.label8.TabIndex = 57;
             this.label8.Text = "Tìm Kiếm";
             // 
@@ -60,7 +61,7 @@
             // radTheophong
             // 
             this.radTheophong.AutoSize = true;
-            this.radTheophong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.radTheophong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radTheophong.Location = new System.Drawing.Point(335, 79);
             this.radTheophong.Name = "radTheophong";
             this.radTheophong.Size = new System.Drawing.Size(87, 17);
@@ -73,7 +74,7 @@
             // radTheoma
             // 
             this.radTheoma.AutoSize = true;
-            this.radTheoma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.radTheoma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radTheoma.Location = new System.Drawing.Point(485, 79);
             this.radTheoma.Name = "radTheoma";
             this.radTheoma.Size = new System.Drawing.Size(68, 17);
@@ -94,18 +95,19 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.White;
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThoat.Image = global::Khanh.Properties.Resources.close1;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(485, 122);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(77, 44);
+            this.btnThoat.Size = new System.Drawing.Size(101, 31);
             this.btnThoat.TabIndex = 64;
             this.btnThoat.Text = "Thoát    ";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -114,17 +116,18 @@
             // 
             // btnTim
             // 
-            this.btnTim.BackColor = System.Drawing.Color.White;
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTim.FlatAppearance.BorderSize = 0;
             this.btnTim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTim.Image = global::Khanh.Properties.Resources.tim;
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTim.Location = new System.Drawing.Point(335, 122);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(67, 44);
+            this.btnTim.Size = new System.Drawing.Size(87, 31);
             this.btnTim.TabIndex = 63;
             this.btnTim.Text = "Tìm";
             this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -144,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(744, 394);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnThoat);
