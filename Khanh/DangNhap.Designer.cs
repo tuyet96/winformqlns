@@ -137,7 +137,6 @@
             this.Controls.Add(this.txtTendangnhap);
             this.Controls.Add(this.label1);
             this.Name = "DangNhap";
-            this.Text = "test";
             this.Load += new System.EventHandler(this.test_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
