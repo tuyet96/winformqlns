@@ -88,6 +88,7 @@
             // 
             this.txtNhaplai.Location = new System.Drawing.Point(232, 186);
             this.txtNhaplai.Name = "txtNhaplai";
+            this.txtNhaplai.PasswordChar = '*';
             this.txtNhaplai.Size = new System.Drawing.Size(168, 20);
             this.txtNhaplai.TabIndex = 5;
             // 
@@ -95,6 +96,7 @@
             // 
             this.txtMkmoi.Location = new System.Drawing.Point(232, 145);
             this.txtMkmoi.Name = "txtMkmoi";
+            this.txtMkmoi.PasswordChar = '*';
             this.txtMkmoi.Size = new System.Drawing.Size(168, 20);
             this.txtMkmoi.TabIndex = 6;
             // 
